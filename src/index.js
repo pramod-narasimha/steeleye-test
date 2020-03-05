@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import SomeListComponent from "./components/SomeListComponent";
+import SomeListComponent from "./components/SomeListComponent/SomeListComponent";
 
 ReactDOM.render(
   <SomeListComponent
-    items={[{ text: "Item 1" }, { text: "Item 2" }, {text: "Item 3"}]}
+    items={[{ text: "Item 1" }, { text: "Item 2" }, { text: "Item 3" }]}
     onClick={items =>
       window.alert(`You have clicked on Item Number - ${items}`)
     }
