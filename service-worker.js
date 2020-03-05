@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/steeleye-test/precache-manifest.71781451502410e04bc08842e9feaa58.js"
+  "/steeleye-test/precache-manifest.b0fc0a0cd6d9a883194253cd3eaf3d11.js"
 );
 
 self.addEventListener('message', (event) => {
