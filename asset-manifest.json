@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/steeleye-test/static/css/main.5f361e03.chunk.css",
+    "main.js": "/steeleye-test/static/js/main.c8fe2d54.chunk.js",
+    "main.js.map": "/steeleye-test/static/js/main.c8fe2d54.chunk.js.map",
+    "runtime-main.js": "/steeleye-test/static/js/runtime-main.6c7933da.js",
+    "runtime-main.js.map": "/steeleye-test/static/js/runtime-main.6c7933da.js.map",
+    "static/js/2.687f1a25.chunk.js": "/steeleye-test/static/js/2.687f1a25.chunk.js",
+    "static/js/2.687f1a25.chunk.js.map": "/steeleye-test/static/js/2.687f1a25.chunk.js.map",
+    "index.html": "/steeleye-test/index.html",
+    "precache-manifest.71781451502410e04bc08842e9feaa58.js": "/steeleye-test/precache-manifest.71781451502410e04bc08842e9feaa58.js",
+    "service-worker.js": "/steeleye-test/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/steeleye-test/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.687f1a25.chunk.js.LICENSE.txt": "/steeleye-test/static/js/2.687f1a25.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/steeleye-test/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c7933da.js",
+    "static/js/2.687f1a25.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.c8fe2d54.chunk.js"
+  ]
+}
