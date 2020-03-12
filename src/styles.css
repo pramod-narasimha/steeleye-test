@@ -1,0 +1,31 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100px;
+  width: 345px;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bannerContainer {
+  display: flex;
+  width: 345px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.imageListContainer {
+  display: flex;
+  /* flex-wrap: no-wrap; */
+  /* justify-content: stretch; */
+  width: 345px;
+  height: 40%;
+  border: 1px solid black;
+}
