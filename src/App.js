@@ -19,63 +19,59 @@ const urls = [
   "https://homepages.cae.wisc.edu/~ece533/images/goldhillss.png"
 ];
 
-export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      currentIndex: 0
-    };
-  }
+const App = () => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  componentDidMount() {
-    setInterval(() => {
-      this.performCarousel();
+  const performCarousel = React.useCallback(() => {
+    if (urls.length - 1 === currentIndex) {
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex(currentIndex + 1);
+    }
+  },[currentIndex]);
+
+  React.useEffect(() => {
+    const timeInterval = setInterval(() => {
+      performCarousel();
     }, 3000);
-  }
+    return () => clearInterval(timeInterval)
+  },[currentIndex, performCarousel]);
 
-  performCarousel = () => {
-    if (urls.length - 1 === this.state.currentIndex) {
-      this.setState({ currentIndex: 0 });
+  const onPrevButtonHandler = () => {
+    if (currentIndex === 0) {
+      setCurrentIndex(urls.length - 1);
     } else {
-      this.setState({ currentIndex: this.state.currentIndex + 1 });
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
-  onPrevButtonHandler = () => {
-    if (this.state.currentIndex === 0) {
-      this.setState({ currentIndex: urls.length - 1 });
-    } else {
-      this.setState({ currentIndex: this.state.currentIndex - 1 });
-    }
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>Image Carousel</h1>
-        <div
-          className={"container"}
-          tabIndex="0"
-          onKeyDown={event => {
-            event.keyCode === 37 && this.onPrevButtonHandler();
-            event.keyCode === 39 && this.performCarousel();
+  return (
+    <div>
+      <h1>Image Carousel</h1>
+      <div
+        className={"container"}
+        tabIndex="0"
+        onKeyDown={event => {
+          event.keyCode === 37 && onPrevButtonHandler();
+          event.keyCode === 39 && performCarousel();
+        }}
+      >
+        <BannerContainer
+          urls={urls}
+          currentIndex={currentIndex}
+          onNextButtonHandler={() => performCarousel()}
+          onPrevButtonHandler={() => onPrevButtonHandler()}
+        />
+        <ImageListContainer
+          urls={urls}
+          currentIndex={currentIndex}
+          onImageClick={index => {
+            setCurrentIndex(index);
           }}
-        >
-          <BannerContainer
-            urls={urls}
-            currentIndex={this.state.currentIndex}
-            onNextButtonHandler={() => this.performCarousel()}
-            onPrevButtonHandler={() => this.onPrevButtonHandler()}
-          />
-          <ImageListContainer
-            urls={urls}
-            currentIndex={this.state.currentIndex}
-            onImageClick={index => {
-              this.setState({ currentIndex: index });
-            }}
-          />
-        </div>
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default App;
